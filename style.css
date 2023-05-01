@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #61d7fb 0%, #ff5acd 100%);
+  place-items: center;
+  display: grid;
+}
+.box {
+  width: 70%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+}
+.box .top_part {
+  width: 100%;
+  position: relative;
+}
+
+.top_part .title_part {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_part h2 {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.title_part .sound {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title_part .sound span {
+  margin-right: 10px;
+  opacity: .7;
+}
+
+input[type="checkbox"] {
+  width: 52px;
+  height: 30px;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgb(0,0,0,.1);
+  transition-duration: 300ms;
+}
+
+input[type="checkbox"]::before{
+    position: absolute;
+    content: '';
+    width: 30px;
+    top: 0;
+    height: 30px;
+    left: 0;
+    border-radius:50%;
+    background-color: rgb(255, 255, 255);
+    transition-duration: 300ms;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+}
+
+input[type="checkbox"]:checked{
+    background-color: rgb(166, 172, 255);
+}
+input[type="checkbox"]:checked::before{
+    left: 22px;
+}
+
+.type_content input{
+    position: absolute;
+    z-index: -999;
+    opacity: 0;
+    /* top: 20px; */
+}
+.type_content p{
+    opacity: .7;
+    font-size: 1.4rem;
+    letter-spacing: 2px;word-spacing: 2px;
+    text-align: justify;
+    line-height: 1.2;
+}
+
+.bottom_part{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 25px;
+    box-shadow: 20px 9px 20px rgba(235, 28, 28, 0.144);
+    border-radius: 5px;
+    
+}
+
+.bottom_part p{
+    font-size: 1.1rem;
+}
+
+.bottom_part button{
+    padding: 15px 20px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #3f8499 0%, #830c5f 100%);
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    transition-duration: 200ms;
+}
+
+.bottom_part button:hover{
+    transform: scale(1.1);
+}
+::selection{
+    background-color: rgb(255, 141, 141);
+    color: #fff;
+}
+
+.correct{
+  color: green;
+}
+.incorrect{
+  color: red;
+}
+.active{
+  opacity: .6;
+  position: relative;
+}
+.active::before{
+  position: absolute;
+  content: '';
+  right: 0;
+  width: 2px;
+  opacity: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.897);
+  animation: blink .5s linear infinite;
+}
+
+@keyframes blink {
+  50%{
+    opacity: 1;
+  }
+}
